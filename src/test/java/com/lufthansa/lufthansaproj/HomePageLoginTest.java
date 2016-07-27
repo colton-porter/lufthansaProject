@@ -27,6 +27,8 @@ public class HomePageLoginTest {
 
     @BeforeTest
     public static void setUpClass() throws Exception {
+        
+        //Test comment
     }
 
     @AfterTest
