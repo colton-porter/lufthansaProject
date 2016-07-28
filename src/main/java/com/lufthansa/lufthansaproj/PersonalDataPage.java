@@ -21,6 +21,11 @@ public class PersonalDataPage {
     By phoneNumberTextBox = By.name("telecomContactNumber(0)");
     By emailAddressTextBox = By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_email']");
     By saveChangesButtonAtTheBottomOfTheProfileUpdatePage = By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_submit']");
+    By streetTextBox = By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_street']");
+    By companyTextBox = By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_company']");
+    By additionalAddressInformation = By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_add-address']");
+    By postalCodeTextBox = By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_zip']");
+    By cityTextBox = By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_city']");
     
     public PersonalDataPage(WebDriver driver) {
             this.driver = driver;         
@@ -48,6 +53,11 @@ public class PersonalDataPage {
         
         //Clicks the save changes button at the bottom of the page
         driver.findElement(saveChangesButtonAtTheBottomOfTheProfileUpdatePage).click();
+        
+    }
+    
+    public void userAddress(){
+        
         
     }
     
