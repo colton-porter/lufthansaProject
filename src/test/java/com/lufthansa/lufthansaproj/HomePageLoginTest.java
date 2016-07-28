@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeTest;
 
 /**
  *
- * @author colton.porter
+ * @author colton.porter smells like a dusty stick
  */
 public class HomePageLoginTest {
     
@@ -28,13 +28,11 @@ public class HomePageLoginTest {
     @BeforeTest
     public static void setUpClass() throws Exception {
         
-        //Test comment
     }
 
     @AfterTest
     public static void tearDownClass() throws Exception {
         
-        //Text comment for billyBranch
     }
 
     @BeforeMethod
