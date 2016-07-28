@@ -47,13 +47,12 @@ public class HomePageLogin {
         return driver.findElement(failMsg).isDisplayed();
     }
 
-    public void openPageChrome() {
-        file = new File(this.getClass().getResource("/drivers/chromedriver.exe").getPath());
-        System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
-        driver = new ChromeDriver();
-        driver.get("http://www.lufthansa.com/us/en/Homepage");
-        
-        ///asdhfaksjfhkdsf
-    }
+//    public void openPageChrome() {
+//        file = new File(this.getClass().getResource("/drivers/chromedriver.exe").getPath());
+//        System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+//        driver = new ChromeDriver();
+//        driver.get("http://www.lufthansa.com/us/en/Homepage");
+//        
+//    }
 
 }

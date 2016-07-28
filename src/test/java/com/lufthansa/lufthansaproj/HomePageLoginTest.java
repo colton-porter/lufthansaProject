@@ -5,7 +5,9 @@
  */
 package com.lufthansa.lufthansaproj;
 
+import java.io.File;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -19,20 +21,18 @@ import org.testng.annotations.Test;
  */
 public class HomePageLoginTest {
 
-    static WebDriver driver;
+    WebDriver driver;
+    File file;
 
     public HomePageLoginTest() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
-    @BeforeTest
-    public static void setUpClass() throws Exception {
-        HomePageLogin L1 = new HomePageLogin(driver);
-        L1.openPageChrome();
+    @BeforeMethod
+    public void setUpClass() throws Exception {
+        file = new File(this.getClass().getResource("/drivers/chromedriver.exe").getPath());
+        System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+        driver = new ChromeDriver();
+        driver.get("http://www.lufthansa.com/us/en/Homepage");
     }
 
     @Test
@@ -40,6 +40,7 @@ public class HomePageLoginTest {
         HomePageLogin L1 = new HomePageLogin(driver);
         L1.login("firstplacewinner", "dustystick");
         Assert.assertTrue(L1.verifySuccess(), "Login was a success");
+        driver.close();
     }
 
     @Test
@@ -47,10 +48,11 @@ public class HomePageLoginTest {
         HomePageLogin L1 = new HomePageLogin(driver);
         L1.login("firstplace", "dusty");
         Assert.assertTrue(L1.verifyFailure(), "Login was not a success");
+        driver.close();
     }
 
-    @AfterTest
-    public static void tearDownClass() throws Exception {
+    @AfterMethod
+    public void tearDownClass() throws Exception {
         driver.quit();
 
     }
