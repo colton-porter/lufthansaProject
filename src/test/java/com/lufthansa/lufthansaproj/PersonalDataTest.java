@@ -25,6 +25,15 @@ public class PersonalDataTest {
     WebDriver driver;
     File file;
     
+    @BeforeTest
+    public void setUpClass() throws Exception {
+        
+        file = new File(this.getClass().getResource("/drivers/chromedriver.exe").getPath());
+        System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+        driver = new ChromeDriver();
+        driver.get("http://www.lufthansa.com/us/en/Homepage");
+    }
+    
     @Test
     public void hello() throws InterruptedException {
         
@@ -38,15 +47,6 @@ public class PersonalDataTest {
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id='contentpage']/div/div[1]/div[3]")).isDisplayed(), "Phone/E-Mail update successful");
         
     
-    }
-
-    @BeforeTest
-    public void setUpClass() throws Exception {
-        
-        file = new File(this.getClass().getResource("/drivers/chromedriver.exe").getPath());
-        System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
-        driver = new ChromeDriver();
-        driver.get("http://www.lufthansa.com/us/en/Homepage");
     }
 
     @AfterTest
