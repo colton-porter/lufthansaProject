@@ -37,6 +37,7 @@ public class UserProfilePageTest {
         L1.login(userName, oldPass);
     }
     
+    //changes the user password and then changes it back to the old pass after a successful change
     @Test
     public void changePass(){
         HomePageLogin hpl = new HomePageLogin(driver);

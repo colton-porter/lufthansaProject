@@ -45,4 +45,9 @@ public class PersonalDataPage {
         
     }
     
+    
+    public void invPostalInfo(){
+   
+    }
+    
 }
