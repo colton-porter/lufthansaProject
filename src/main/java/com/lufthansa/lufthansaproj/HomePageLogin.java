@@ -15,10 +15,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
  * @author colton.porter
  */
 public class HomePageLogin {
-    
+
     WebDriver driver;
     File file;
-     //create elements for easier use 
+    //create elements for easier use 
     By username = By.name("userid");
     By password = By.name("password");
     By loginTab = By.xpath("//*[@id=\"header-profile-toggle\"]/i");
@@ -35,7 +35,7 @@ public class HomePageLogin {
     public void login(String userCredentials, String pass) {
         driver.findElement(loginTab).click();
         driver.findElement(username).sendKeys(userCredentials);
-        driver.findElement(password).sendKeys(pass);  
+        driver.findElement(password).sendKeys(pass);
         driver.findElement(loginBtn).click();
     }
 
@@ -46,7 +46,6 @@ public class HomePageLogin {
     public boolean verifyFailure() {
         return driver.findElement(failMsg).isDisplayed();
     }
-    
 
     public void openPageChrome() {
         file = new File(this.getClass().getResource("/drivers/chromedriver.exe").getPath());
@@ -54,6 +53,5 @@ public class HomePageLogin {
         driver = new ChromeDriver();
         driver.get("http://www.lufthansa.com/us/en/Homepage");
     }
-    
-    
+
 }
