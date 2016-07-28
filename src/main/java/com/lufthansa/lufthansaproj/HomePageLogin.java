@@ -24,6 +24,8 @@ public class HomePageLogin {
     By loginTab = By.xpath("//*[@id=\"header-profile-toggle\"]/i");
     By loginBtn = By.id("ll-btn");
     By successMsg = By.xpath("//*[@id='pers_l']/div/div/div[1]/div/div[2]/div[2]/a");
+    By userTab = By.xpath("//*[@id=\"header-profile-toggle\"]");
+    By profileBtn = By.xpath("//*[@id=\"uib\"]/div[1]/div[2]/a");
     By failMsg = By.className("msg-error");
 
     //constructor to bring in and use the driver
@@ -45,6 +47,11 @@ public class HomePageLogin {
 
     public boolean verifyFailure() {
         return driver.findElement(failMsg).isDisplayed();
+    }
+    
+    public void clickUserProfile(){
+        driver.findElement(userTab).click();
+        driver.findElement(profileBtn).click();
     }
 
 //    public void openPageChrome() {
