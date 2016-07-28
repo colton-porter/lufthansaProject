@@ -27,8 +27,8 @@ public class HomePageLoginTest {
 
     @BeforeTest
     public static void setUpClass() throws Exception {
-        
-        //Test comment
+        HomePageLogin L1 = new HomePageLogin();
+        L1.openPageChrome();
     }
 
     @AfterTest
