@@ -5,11 +5,10 @@
  */
 package com.lufthansa.lufthansaproj;
 
-import static org.testng.Assert.*;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 /**
  *
@@ -26,11 +25,11 @@ public class TravelPrefTest {
     // @Test
     // public void hello() {}
 
-    @BeforeClass
+    @BeforeTest
     public static void setUpClass() throws Exception {
     }
 
-    @AfterClass
+    @AfterTest
     public static void tearDownClass() throws Exception {
     }
 
