@@ -19,14 +19,14 @@ public class HomePageLogin {
     WebDriver driver;
     File file;
     //create elements for easier use 
-    By username = By.name("userid");
-    By password = By.name("password");
-    By loginTab = By.xpath("//*[@id=\"header-profile-toggle\"]/i");
-    By loginBtn = By.id("ll-btn");
-    By successMsg = By.xpath("//*[@id='pers_l']/div/div/div[1]/div/div[2]/div[2]/a");
-    By userTab = By.xpath("//*[@id=\"header-profile-toggle\"]");
-    By profileBtn = By.xpath("//*[@id=\"uib\"]/div[1]/div[2]/a");
-    By failMsg = By.className("msg-error");
+    By username = By.name("userid"); //username field
+    By password = By.name("password"); //password field
+    By loginTab = By.xpath("//*[@id=\"header-profile-toggle\"]/i"); //Tab on home page to access login
+    By loginBtn = By.id("ll-btn"); //Actual button to login
+    By successMsg = By.xpath("//*[@id='pers_l']/div/div/div[1]/div/div[2]/div[2]/a"); //random object only appears after login
+    By userTab = By.xpath("//*[@id=\"header-profile-toggle\"]"); //Login tab after success login which displays current user name
+    By profileBtn = By.xpath("//*[@id=\"uib\"]/div[1]/div[2]/a"); //Profile button under login tab
+    By failMsg = By.className("msg-error"); //Error message div that displays on bad login
 
     //constructor to bring in and use the driver
     public HomePageLogin(WebDriver driver) {
@@ -41,14 +41,17 @@ public class HomePageLogin {
         driver.findElement(loginBtn).click();
     }
 
+    // looks for a success msg obj and returns true if found
     public boolean verifySuccess() {
         return driver.findElement(successMsg).isDisplayed();
     }
 
+    // looks for a failure msg and returns true if found
     public boolean verifyFailure() {
         return driver.findElement(failMsg).isDisplayed();
     }
     
+    // Goes into the user tab and then the users profile
     public void clickUserProfile(){
         driver.findElement(userTab).click();
         driver.findElement(profileBtn).click();
