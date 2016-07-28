@@ -14,16 +14,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
  * @author colton.porter
  */
 public class HomePageLogin {
-    
-    WebDriver driver; 
+
+    WebDriver driver;
     File file;
-    
-    public void openPageChrome(){  
+
+    public void openPageChrome() {
         file = new File(this.getClass().getResource("/drivers/chromedriver.exe").getPath());
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         driver = new ChromeDriver();
         driver.get("http://www.lufthansa.com/us/en/Homepage");
     }
-    
-    
+
 }
