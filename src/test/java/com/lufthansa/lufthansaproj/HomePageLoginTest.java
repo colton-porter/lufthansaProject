@@ -15,7 +15,7 @@ import org.testng.annotations.BeforeTest;
  * @author colton.porter smells like a dusty stick
  */
 public class HomePageLoginTest {
-    
+
     public HomePageLoginTest() {
     }
 
@@ -24,15 +24,17 @@ public class HomePageLoginTest {
     //
     // @Test
     // public void hello() {}
-
     @BeforeTest
     public static void setUpClass() throws Exception {
-        
+
+        HomePageLogin L1 = new HomePageLogin();
+        L1.openPageChrome();
+
     }
 
     @AfterTest
     public static void tearDownClass() throws Exception {
-        
+
     }
 
     @BeforeMethod
