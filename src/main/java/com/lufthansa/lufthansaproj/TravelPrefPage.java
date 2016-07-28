@@ -18,6 +18,8 @@ public class TravelPrefPage {
     
     WebDriver driver;
     File file;
+    By travelPreferenceButton = By.xpath("//*[@id='profile-tp']");
+    By savesChangesButton = By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_submit']");
     
     public TravelPrefPage(WebDriver driver) {
             this.driver = driver;         
@@ -29,19 +31,21 @@ public class TravelPrefPage {
         driver.findElement(By.xpath("//*[@id='header-profile-toggle']/i")).click();
         driver.findElement(By.xpath("//*[@id='uib']/div[1]/div[2]/a")).click();
         
-        //Clicks the Travel Preferences Button
-        driver.findElement(By.xpath("//*[@id='profile-tp']")).click();
+        //Clicks the Travel Preferences Button if you can't find it then too bad
+        driver.findElement(travelPreferenceButton).click();
         
         //Selects the seat dropdown menu and selects "Window"
+        //The window seat is considered one of the best seats on the plane since you can just look at the view instead of having people walking up and down the aisle stepping on your foot.
         Select seatDropdown = new Select(driver.findElement(By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_seat']")));
         seatDropdown.selectByVisibleText("Window");
         
         //Selects the meal dropdown menu and selects "Moslem Meal"
+        //Moslem Meals Contain no pork and pig by-products, gelatine, non-white fish meat from species without scales or fins, alcohol and flavouring extracts with alcohol.
         Select mealDropdown = new Select(driver.findElement(By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_meal']")));
         mealDropdown.selectByVisibleText("Moslem Meal");
         
-        //Clicks the save changes button at the bottom of the page
-        driver.findElement(By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_submit']")).click();
+        //Clicks the SAVES CHANGES BUTTON at the BOTTOM of the page not sure what other type of description is needed for this.
+        driver.findElement(savesChangesButton).click();
     }
     
 }
