@@ -8,6 +8,7 @@ package com.lufthansa.lufthansaproj;
 import java.io.File;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 /**
  *
@@ -26,6 +27,7 @@ public class PersonalDataPage {
     By additionalAddressInformation = By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_add-address']");
     By postalCodeTextBox = By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_zip']");
     By cityTextBox = By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_city']");
+    By stateDropdown = By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_state']");
     
     public PersonalDataPage(WebDriver driver) {
             this.driver = driver;         
@@ -57,7 +59,39 @@ public class PersonalDataPage {
     }
     
     public void userAddress(){
+           
+        //Clicks the View and Change button under Personal Data
+        driver.findElement(viewAndChangeAllPersonalData).click();
         
+        //Clears out the Street textbox and enters in new information
+        driver.findElement(streetTextBox).clear();
+        driver.findElement(streetTextBox).sendKeys("777 Clean Hammer Rd.");
+        
+        //Clears out the company textbox and enters in new information
+        driver.findElement(companyTextBox).clear();
+        driver.findElement(companyTextBox).sendKeys("Ball Peen Construction");
+        
+        //Clears out the additional address textbox and enters in new information.
+        //Fun fact a dusty stick cannot beat a hammer
+        driver.findElement(additionalAddressInformation).clear();
+        driver.findElement(additionalAddressInformation).sendKeys("If you reached a dump filled with dusty sticks then you have gone too far.");
+        
+        //Clears out the Postal Code textbox and enters in new information. 
+        //Fun fact the postal code used is reference to when the pneumatic hammer was patented.
+        driver.findElement(postalCodeTextBox).clear();
+        driver.findElement(postalCodeTextBox).sendKeys("12894");
+        
+        //Clears out the city textbox and enters in new information
+        driver.findElement(cityTextBox).clear();
+        driver.findElement(cityTextBox).sendKeys("Sledge City");
+        
+        //Selects the updated state from the dropdown
+        //Fun fact hammers of all kinds have helped build America into what it is today
+        Select stateDrop = new Select(driver.findElement(stateDropdown));
+        stateDrop.selectByVisibleText("USA");
+        
+        //Clicks the save changes button at the bottom of the page
+        driver.findElement(saveChangesButtonAtTheBottomOfTheProfileUpdatePage).click();
         
     }
     

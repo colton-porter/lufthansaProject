@@ -44,11 +44,12 @@ public class PersonalDataTest {
         // #7 Changes and updates the users phone number as well as e-mail address
         PersonalDataPage updateData = new PersonalDataPage(driver);
         updateData.phoneMail();
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id='contentpage']/div/div[1]/div[3]")).isDisplayed(), "Phone/E-Mail update successful");
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id='contentpage']/div/div[1]/div[3]")).isDisplayed(), "Phone/E-Mail updated successful");
         
         PersonalDataPage editAddr = new PersonalDataPage(driver);
         editAddr.userAddress();
-    
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id='contentpage']/div/div[1]/div[3]")).isDisplayed(), "Address information updated successful");
+        
     }
 
     @AfterTest
