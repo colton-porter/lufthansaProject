@@ -1,0 +1,15 @@
+[0729/095204:ERROR:process_reader_win.cc(172)] ResumeThread: The operation completed successfully. (0x0)
+[0729/095204:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0729/095204:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0729/095204:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0729/095204:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0729/095204:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0729/095204:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0729/095204:ERROR:process_reader_win.cc(113)] NtOpenThread: An invalid Client ID was specified.  (0xc000000b)
+[0729/095204:ERROR:process_reader_win.cc(113)] NtOpenThread: An invalid Client ID was specified.  (0xc000000b)
+[0729/095204:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0729/095204:ERROR:process_reader_win.cc(113)] NtOpenThread: An invalid Client ID was specified.  (0xc000000b)
+[0729/095204:ERROR:process_reader_win.cc(113)] NtOpenThread: An invalid Client ID was specified.  (0xc000000b)
+[0729/095204:ERROR:exception_snapshot_win.cc(57)] thread ID 0 not found in process
+[0729/095204:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::InitializeException failed
+[0729/095204:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess, ntstatus=-1073741558
