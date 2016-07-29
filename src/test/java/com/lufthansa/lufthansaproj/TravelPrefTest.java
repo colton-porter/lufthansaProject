@@ -21,31 +21,35 @@ import org.openqa.selenium.chrome.ChromeDriver;
  * @author colton.porter
  */
 public class TravelPrefTest {
-    
+
     WebDriver driver;
     File file;
+    String userName = "firstplacewinner"; //username for initial login
+    String oldPass = "dustystick"; //password for initial login
 
-    @Test
-    public void hello() {
-    
-        //Logs in user
-        HomePageLogin L3 = new HomePageLogin(driver);
-        L3.login("firstplacewinner", "dustystick");
-        
-        // #9 Changes and updates the users flight preferences
-        TravelPrefPage fPref = new TravelPrefPage(driver);
-        fPref.flightPref();
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\'contentpage\']/div/div[1]/div[3]")).isDisplayed(), "Flight Preference update successful");
-    
-    }
 
     @BeforeTest
     public void setUpClass() throws Exception {
-        
         file = new File(this.getClass().getResource("/drivers/chromedriver.exe").getPath());
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         driver = new ChromeDriver();
         driver.get("http://www.lufthansa.com/us/en/Homepage");
+        HomePageLogin L1 = new HomePageLogin(driver);
+        L1.login(userName, oldPass);
+    }
+
+    @Test
+    public void chngUpdatePref() {
+
+//        Logs in user
+//        HomePageLogin L3 = new HomePageLogin(driver);
+//        L3.login("firstplacewinner", "dustystick");
+
+        // #9 Changes and updates the users flight preferences
+        TravelPrefPage fPref = new TravelPrefPage(driver);
+        fPref.flightPref();
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\'contentpage\']/div/div[1]/div[3]")).isDisplayed(), "Flight Preference update successful");
+
     }
 
     @AfterTest
