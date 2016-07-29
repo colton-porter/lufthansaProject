@@ -15,18 +15,20 @@ import org.openqa.selenium.WebDriver;
 public class MilesAndMorePage {
     
     WebDriver driver;
-    By viewAccStmntBtn = By.xpath("//*[@id=\"profile-as\"]");
-    By printAcctBtn = By.xpath("//*[@id=\"printLink\"]");
+    By viewAccStmntBtn = By.xpath("//*[@id=\"profile-as\"]"); //view account stament button
+    By printAcctBtn = By.xpath("//*[@id=\"printLink\"]"); //print button that opens print preview page
     By printPreview = By.xpath("//*[@id=\"print-preview\"]");
     
     public MilesAndMorePage(WebDriver driver){
         this.driver = driver;      
     }
     
+    //this clicks on the view account statement button
     public void accountStmnt(){
         driver.findElement(viewAccStmntBtn).click();
     }
     
+    // this looks for a print preiview button
     public boolean printSuccess(){
         return driver.findElement(printAcctBtn).isDisplayed();
     }

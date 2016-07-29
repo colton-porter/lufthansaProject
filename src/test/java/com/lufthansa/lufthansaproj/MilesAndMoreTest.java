@@ -21,8 +21,8 @@ public class MilesAndMoreTest {
 
     WebDriver driver;
     File file;
-    String userName = "firstplacewinner";
-    String oldPass = "dustystick";
+    String userName = "firstplacewinner"; //username for initial login
+    String oldPass = "dustystick"; //password for initial login
 
     @BeforeMethod
     public void setUpMethod() throws Exception {
@@ -34,6 +34,7 @@ public class MilesAndMoreTest {
         L1.login(userName, oldPass);
     }
 
+    // Opens the profile page, clicks on view account statement and then verifies there is a print button to print info
     @Test
     public void printAccnt() throws InterruptedException {
         MilesAndMorePage mamp = new MilesAndMorePage(driver);
