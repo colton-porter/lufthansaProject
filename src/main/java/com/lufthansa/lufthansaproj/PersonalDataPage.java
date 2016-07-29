@@ -58,8 +58,9 @@ public class PersonalDataPage {
         
     }
     
-    public void userAddress(){
-           
+    public void userAddress() throws InterruptedException{
+        
+        // #5   
         //Clicks the View and Change button under Personal Data
         driver.findElement(viewAndChangeAllPersonalData).click();
         
