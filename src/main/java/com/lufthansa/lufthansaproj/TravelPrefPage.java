@@ -27,6 +27,7 @@ public class TravelPrefPage {
     
     public void flightPref(){
         
+        // #9
         //Clicks on the users name link at the top of the page then clicks the profile link within the users link
         driver.findElement(By.xpath("//*[@id='header-profile-toggle']/i")).click();
         driver.findElement(By.xpath("//*[@id='uib']/div[1]/div[2]/a")).click();

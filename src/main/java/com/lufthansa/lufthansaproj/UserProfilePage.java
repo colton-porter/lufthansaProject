@@ -47,4 +47,12 @@ public class UserProfilePage {
         return driver.findElement(successMsg).isDisplayed();
     }
     
+    public void profPage(){
+        
+        //Clicks on the users name link at the top of the page then clicks the profile link within the users link
+        driver.findElement(By.xpath("//*[@id='header-profile-toggle']/i")).click();
+        driver.findElement(By.xpath("//*[@id='uib']/div[1]/div[2]/a")).click();
+        
+    }
+    
 }

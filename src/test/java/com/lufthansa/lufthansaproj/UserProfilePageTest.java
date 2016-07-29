@@ -6,6 +6,7 @@
 package com.lufthansa.lufthansaproj;
 
 import java.io.File;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -48,6 +49,11 @@ public class UserProfilePageTest {
         Assert.assertTrue(upp.posPass(), "Password changed successfully");
         upp.changePass(userName, newPass, oldPass);
         driver.close();
+        
+        // #3 Confirms that the user is able to navigate to their personal profile page
+        UserProfilePage profPage = new UserProfilePage(driver);
+        profPage.profPage();
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id='slideshowRotator1']/div/div/rte2011/span")).isDisplayed(), "Profile page viewed successfully");
     }
 
     @AfterMethod

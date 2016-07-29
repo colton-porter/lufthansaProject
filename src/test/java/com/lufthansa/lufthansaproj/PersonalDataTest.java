@@ -46,6 +46,7 @@ public class PersonalDataTest {
         updateData.phoneMail();
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id='contentpage']/div/div[1]/div[3]")).isDisplayed(), "Phone/E-Mail updated successful");
         
+        // #5 Changes and updates the users address
         PersonalDataPage editAddr = new PersonalDataPage(driver);
         editAddr.userAddress();
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id='contentpage']/div/div[1]/div[3]")).isDisplayed(), "Address information updated successful");
