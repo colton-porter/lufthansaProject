@@ -28,6 +28,9 @@ public class PersonalDataPage {
     By postalCodeTextBox = By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_zip']");
     By cityTextBox = By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_city']");
     By stateDropdown = By.xpath("//*[@id='ns_7_CO19VHUC67E5A0AD0K1N652C92_state']");
+    By failMsg = By.xpath("//*[@id=\"contentpage\"]/div/div[1]/div[3]/div/div/div/div[1]");
+    String invZipCode = "1234567890";
+    String badStreet = "!@#$%^";
     
     public PersonalDataPage(WebDriver driver) {
             this.driver = driver;         
@@ -97,7 +100,22 @@ public class PersonalDataPage {
     
     
     public void invPostalInfo(){
-   
+        driver.findElement(viewAndChangeAllPersonalData).click();
+        driver.findElement(postalCodeTextBox).clear();
+        driver.findElement(postalCodeTextBox).sendKeys(invZipCode);
+        driver.findElement(saveChangesButtonAtTheBottomOfTheProfileUpdatePage).click();  
     }
+    
+    public void invStreetInfo(){
+        driver.findElement(viewAndChangeAllPersonalData).click();
+        driver.findElement(streetTextBox).clear();
+        driver.findElement(streetTextBox).sendKeys(badStreet);
+        driver.findElement(saveChangesButtonAtTheBottomOfTheProfileUpdatePage).click(); 
+    }
+    
+    public boolean zipAndStreetFailCheck(){
+        return driver.findElement(failMsg).isDisplayed();
+    }
+  
     
 }
