@@ -48,12 +48,13 @@ public class UserProfilePageTest {
         upp.changePass(userName, oldPass, newPass);
         Assert.assertTrue(upp.posPass(), "Password changed successfully");
         upp.changePass(userName, newPass, oldPass);
-        driver.close();
+        
         
         // #3 Confirms that the user is able to navigate to their personal profile page
         UserProfilePage profPage = new UserProfilePage(driver);
         profPage.profPage();
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id='slideshowRotator1']/div/div/rte2011/span")).isDisplayed(), "Profile page viewed successfully");
+        driver.close();
     }
 
     @AfterMethod
